@@ -1,0 +1,22 @@
+.container {
+    padding: 0 2rem;
+}
+
+.logo-block {
+    padding: 40px 0 20px;
+    text-align: center;
+    border-bottom: 10px solid var(--white);
+    margin-bottom: 20px;
+}
+
+.logo-block p {
+    font-family: var(--font-1);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 2.8rem;
+    color: var(--white);
+}
+
+.logo-block span {
+    display: block;
+}
