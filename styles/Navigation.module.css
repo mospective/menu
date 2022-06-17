@@ -8,6 +8,7 @@
 }
 
 .navigation li {
+    position: relative;
     margin: 0 10px;
 }
 
@@ -17,3 +18,7 @@
     font-size: 1.8rem;
     font-family: var(--font-2);
 }
+
+/* .navigation li:hover::after a {
+
+} */
