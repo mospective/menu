@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../styles/Navigation.module.css";
 
 const Navigation = () => {
@@ -6,13 +7,19 @@ const Navigation = () => {
         <>
             <nav className={styles.navigation}>
                 <li>
-                    <a href="#">Mains</a>
+                    <Link href="/category/mains">
+                        <a>Mains</a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#">Sides</a>
+                    <Link href="/category/sides">
+                        <a>Sides</a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="#">Drinks</a>
+                    <Link href="/category/drinks">
+                        <a>Drinks</a>
+                    </Link>
                 </li>
             </nav>
         </>

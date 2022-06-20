@@ -4,6 +4,8 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .intro {
@@ -46,10 +48,10 @@
 @media screen and (max-width: 768px) {
     .logo {
         font-size: 2.5rem;
-        line-height: 4rem;
+        line-height: 3.5rem;
     }
 
     .logo-main {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 }
