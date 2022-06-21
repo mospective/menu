@@ -41,6 +41,7 @@
 
 .text {
     flex-basis: 50%;
+    padding-right: 5px;
 }
 
 .fullwidth {
