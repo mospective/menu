@@ -1,8 +1,7 @@
 import { createClient } from 'contentful';
 import Image from "next/image";
-// import { useRouter } from "next/router";
-// import Link from "next/link";
 import Header from '../../components/Header';
+import { formatPrice } from '../../helpers';
 import styles from "../../styles/Menu.module.css";
 
 const menuCategories = ["mains", "sides", "drinks"];
@@ -39,35 +38,29 @@ export async function getStaticProps(context) {
 }
 
 const Category = ({ menuItems }) => {
-    // const router = useRouter();
-    // const catID = router.query.cat;
-    console.log(menuItems)
     return (
         <>
             <Header />
             <div className={styles.cards}>
-                {/* { console.log(articles) } */}
                  {menuItems.map((item, i) => {
                     const productName = item.fields.foodName || item.fields.drinkName;
                     const description = item.fields?.description;
                     const price = item.fields.price;
                     const imageInfo = item.fields?.foodImage?.fields.file;
                     const image = imageInfo?.url;
-                    const slug = item.fields.slug;
 
                     return (
                         <div className={styles.card} key={i}>
-                            <div className={styles.text}>
+                            <div className={image ? styles.text : styles.fullwidth}>
                                 <p className={styles.product}>{ productName }</p>
                                 <p className={styles.description}>{ description }</p>
-                                <span className={styles.price}>{ price }</span>
+                                <span className={styles.price}>{ formatPrice(price) }</span>
                             </div>
-                            <div className={styles.image}>
-                            {image && <Image src={`https:${image ? image : "none"}`} width={imageInfo?.details.image.width} height={imageInfo?.details.image.height} />}
-                            </div>
-                        {/* <Link href={`/category/${catID}/${slug}`}>
-                            <button>View</button>
-                        </Link> */}
+                            {image && (
+                                <div className={styles.image}>
+                                    <Image src={`https:${image ? image : "none"}`} width={imageInfo?.details.image.width} height={imageInfo?.details.image.height} />
+                                </div>
+                            )}
                         </div>
                         );
                 })}

@@ -29,12 +29,49 @@
 .card {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 3px solid var(--white);
+}
+
+.card:last-child {
+    border-bottom: none;
 }
 
 .text {
-    width: 50%;
+    flex-basis: 50%;
+}
+
+.fullwidth {
+    flex-basis: 100%;
+}
+
+.product {
+    font-family: var(--font-2);
+    font-weight: 500;
+    color: var(--beige);
+    font-size: 1.6rem;
+    margin-bottom: 10px
+}
+
+.description {
+    font-family: var(--font-2);
+    font-weight: 300;
+    color: var(--beige-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-family: var(--font-2);
+    font-weight: 400;
+    color: var(--beige-secondary);
+    font-size: 1.6rem;
 }
 
 .image {
-    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-basis: 49%;
 }
